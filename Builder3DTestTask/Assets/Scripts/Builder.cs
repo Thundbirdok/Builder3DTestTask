@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Builder
+public class Builder : MonoBehaviour
 {
 
-    public static void Build(GameObject place, int index)
+    [SerializeField]
+    private Transform ObjectsPool;
+
+    [SerializeField]
+    private GameObject[] objectsToBuild;
+
+    public GameObject[] ObjectsToBuild { get => objectsToBuild; }
+
+    public void Build(GameObject place, int index)
     {
-
-
+        
+        Instantiate(objectsToBuild[index], 
+            place.transform.position + new Vector3(0, 0.5f, 0), 
+            Quaternion.identity, ObjectsPool);
 
     }
 
-    public static void Upgrade(GameObject building)
+    public void Upgrade(GameObject building)
     {
 
 

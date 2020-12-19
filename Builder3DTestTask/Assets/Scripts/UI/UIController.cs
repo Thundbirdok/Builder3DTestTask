@@ -5,6 +5,9 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
 
+    [SerializeField]    
+    private Builder builder;
+
     [SerializeField]
     private GameObject BuildingWindow = null;
 
@@ -17,7 +20,7 @@ public class UIController : MonoBehaviour
     public void SelectObjectToBuild(int value)
     {
 
-        selectedObjectToBuild = value;
+        selectedObjectToBuild = value;        
 
     }
 
@@ -33,8 +36,10 @@ public class UIController : MonoBehaviour
 
     public void Build()
     {
+        
+        builder.Build(target, selectedObjectToBuild);
 
-        Builder.Build(target, selectedObjectToBuild);
+        CloseBuildingWindow();
 
     }
 
@@ -57,7 +62,7 @@ public class UIController : MonoBehaviour
     public void Upgrade()
     {
 
-        Builder.Upgrade(target);
+        builder.Upgrade(target);
 
     }
 

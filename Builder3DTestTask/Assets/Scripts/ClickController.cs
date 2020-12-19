@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ClickController : MonoBehaviour
 {
@@ -20,20 +21,18 @@ public class ClickController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
-        {            
+
+        if (!EventSystem.current.IsPointerOverGameObject() && Input.GetMouseButtonDown(0))
+        {
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, 100))
-            {                
+            {
 
                 if (hit.transform.gameObject.tag == "Tile")
                 {
-
-                    Debug.Log("Tile");
 
                     _uiController.OpenBuildingWindow(hit.transform.gameObject);
 
