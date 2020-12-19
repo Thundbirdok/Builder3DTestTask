@@ -2792,6 +2792,7 @@ MonoBehaviour:
   ObjectsPool: {fileID: 332928532}
   objectsToBuild:
   - {fileID: 1970473182783297505, guid: 4ce4bef5df54f444e8c7add790d05136, type: 3}
+  - {fileID: 1970473182783297505, guid: 54e068e01f06e874290fb62675b6cd0b, type: 3}
   - {fileID: 212138360071828205, guid: d3614d86d77a30b46828a70c7bd3de0f, type: 3}
 --- !u!114 &963194231
 MonoBehaviour:
@@ -2806,9 +2807,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
+  minDistanceToTarget: 5
+  maxDistanceToTarget: 10
   distanceToTarget: 8
   aroundYSpeed: 5
   aroundXSpeed: 5
+  ZoomSpeed: 1
 --- !u!1 &1000706093
 GameObject:
   m_ObjectHideFlags: 0

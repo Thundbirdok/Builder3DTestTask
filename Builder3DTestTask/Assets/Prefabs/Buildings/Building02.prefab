@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2112076567015000371}
   - component: {fileID: 6246876890712436390}
   m_Layer: 0
-  m_Name: Building01
+  m_Name: Building02
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,10 +61,10 @@ MonoBehaviour:
   meshRenderer: {fileID: 7258913749931104241}
   RateColors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 0}
 --- !u!1 &4528237138583116747
 GameObject:
   m_ObjectHideFlags: 0
