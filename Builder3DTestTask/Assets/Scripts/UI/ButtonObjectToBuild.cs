@@ -7,24 +7,12 @@ public class ButtonObjectToBuild : MonoBehaviour
 {
 
     [SerializeField]
-    private ObjectsListController controller;
+    private BuildingWindowController controller;
 
     [SerializeField]
     private TextMeshProUGUI buttonText;
 
     private int _index;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SetText(string text)
     {

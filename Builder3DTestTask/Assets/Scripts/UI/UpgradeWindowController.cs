@@ -12,6 +12,15 @@ public class UpgradeWindowController : MonoBehaviour
     [SerializeField]
     private GameObject StarTemplate;
 
+    [SerializeField]
+    private Builder builder;
+
+    [SerializeField]
+    private UIController uiController;
+
+    private GameObject _target;
+    private Upgradable _targetUpgradable;
+
     private List<GameObject> Stars;
 
     public void SetRate(int rate)
@@ -29,26 +38,12 @@ public class UpgradeWindowController : MonoBehaviour
         for (; i < rate; ++i)
         {
 
-            if (Stars[i] == null)
-            {
-
-                Debug.Log("WTF " + i);
-
-            }
-
             Stars[i].SetActive(true);
 
         }
 
         for (; i < 5; ++i)
         {
-
-            if (Stars[i] == null)
-            {
-
-                Debug.Log("WTF " + i);
-
-            }
 
             Stars[i].SetActive(false);
 
@@ -73,4 +68,38 @@ public class UpgradeWindowController : MonoBehaviour
         }
 
     }
+
+    public void Open(GameObject building)
+    {
+
+        _target = building;
+        _targetUpgradable = _target.GetComponent<Upgradable>();
+
+        int rate = _targetUpgradable.Rate;
+
+        SetRate(rate);
+
+        gameObject.SetActive(true);
+
+    }
+
+    public void Close()
+    {
+
+        gameObject.SetActive(false);
+        uiController.CloseWindow();
+
+    }
+
+    public void Upgrade()
+    {
+
+        builder.Upgrade(_target);
+
+        int rate = _targetUpgradable.Rate;
+
+        SetRate(rate);
+
+    }
+
 }

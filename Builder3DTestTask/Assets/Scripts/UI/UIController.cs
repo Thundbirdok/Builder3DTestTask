@@ -9,83 +9,99 @@ public class UIController : MonoBehaviour
     private Builder builder;
 
     [SerializeField]
-    private GameObject BuildingWindow = null;
+    private BuildingWindowController buildingWindowController = null;
 
     [SerializeField]
-    private GameObject UpgradeWindow = null;
-
     private UpgradeWindowController upgradeWindowContrtoller = null;
 
-    private GameObject target;
-    private int selectedObjectToBuild;
+    private bool isRaycastBlock = false;
 
-    void Start()
+    private enum OpenedWindow
     {
 
-        upgradeWindowContrtoller = UpgradeWindow.GetComponent<UpgradeWindowController>();
+        BuildingWindow,
+        UpgradeWindow,
+        None
 
     }
 
-    public void SelectObjectToBuild(int value)
-    {
-
-        selectedObjectToBuild = value;        
-
-    }
+    private OpenedWindow state = OpenedWindow.None;
 
     public void OpenBuildingWindow(GameObject tile)
     {
 
-        target = tile;
-        selectedObjectToBuild = 0;
+        if (isRaycastBlock)
+        {
 
-        BuildingWindow.SetActive(true);
+            return;
 
-    }
+        }
 
-    public void Build()
-    {
-        
-        builder.Build(target, selectedObjectToBuild);
+        if (state == OpenedWindow.UpgradeWindow)
+        {
 
-        CloseBuildingWindow();
+            upgradeWindowContrtoller.Close();
 
-    }
+        } else if (state == OpenedWindow.BuildingWindow)
+        {
 
-    public void CloseBuildingWindow()
-    {
+            buildingWindowController.Close();
 
-        BuildingWindow.SetActive(false);
+        }
+
+        buildingWindowController.Open(tile);
+
+        state = OpenedWindow.BuildingWindow;
 
     }
 
     public void OpenUpgradeWindow(GameObject building)
     {
 
-        target = building;
+        if (isRaycastBlock)
+        {
 
-        int rate = target.GetComponent<Upgradable>().Rate;
+            return;
 
-        UpgradeWindow.SetActive(true);
+        }
 
-        upgradeWindowContrtoller.SetRate(rate);        
+        if (state == OpenedWindow.UpgradeWindow)
+        {
+
+            upgradeWindowContrtoller.Close();
+
+        }
+        else if (state == OpenedWindow.BuildingWindow)
+        {
+
+            buildingWindowController.Close();
+
+        }
+
+        upgradeWindowContrtoller.Open(building);
+
+        state = OpenedWindow.UpgradeWindow;
 
     }
 
-    public void Upgrade()
+    public void CloseWindow()
     {
 
-        builder.Upgrade(target);
-
-        int rate = target.GetComponent<Upgradable>().Rate;
-        upgradeWindowContrtoller.SetRate(rate);
+        state = OpenedWindow.None;
 
     }
 
-    public void CloseUpgradeWindow()
+    public void BlockRaycast()
     {
 
-        UpgradeWindow.SetActive(false);
+        isRaycastBlock = true;
+
+    }
+
+    public void UnblockRaycast()
+    {
+
+        isRaycastBlock = false;
 
     }
 

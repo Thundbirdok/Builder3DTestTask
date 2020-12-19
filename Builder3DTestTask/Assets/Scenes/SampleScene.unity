@@ -252,8 +252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   builder: {fileID: 963194230}
-  BuildingWindow: {fileID: 1317446708}
-  UpgradeWindow: {fileID: 1862221735}
+  buildingWindowController: {fileID: 1317446712}
+  upgradeWindowContrtoller: {fileID: 1862221739}
 --- !u!114 &117337364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,10 +1072,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1585,9 +1585,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 117337363}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: CloseUpgradeWindow
+      - m_Target: {fileID: 1862221739}
+        m_TargetAssemblyTypeName: UpgradeWindowController, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2567,8 +2567,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -25}
-  m_SizeDelta: {x: 400, y: 50}
+  m_AnchoredPosition: {x: 200, y: -50}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &948108099
 MonoBehaviour:
@@ -2676,7 +2676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74b9d3debacf78408fb9b509b991664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1867589306}
+  controller: {fileID: 1317446712}
   buttonText: {fileID: 400536897}
 --- !u!1 &963194225
 GameObject:
@@ -2776,7 +2776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fddf6c81d11ea45b8ea96673c6e9b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UIController: {fileID: 117337362}
+  _uiController: {fileID: 117337363}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,8 +2896,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 117337363}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 1317446712}
+        m_TargetAssemblyTypeName: BuildingWindowController, Assembly-CSharp
         m_MethodName: Build
         m_Mode: 1
         m_Arguments:
@@ -2983,7 +2983,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 900, y: 100}
+  m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002972797
 MonoBehaviour:
@@ -3390,6 +3390,7 @@ GameObject:
   - component: {fileID: 1317446711}
   - component: {fileID: 1317446710}
   - component: {fileID: 1317446709}
+  - component: {fileID: 1317446712}
   m_Layer: 5
   m_Name: BuildingWindow
   m_TagString: Untagged
@@ -3452,11 +3453,27 @@ RectTransform:
   m_Father: {fileID: 117337367}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 960, y: 540}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -50.00006, y: -50}
+  m_SizeDelta: {x: 750, y: 700}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &1317446712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317446708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c95920b7a6cba4a82ea40219464b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonTemplate: {fileID: 948108097}
+  builder: {fileID: 963194230}
+  uiController: {fileID: 117337363}
+  buttonBuild: {fileID: 1000706093}
 --- !u!1 &1320685727
 GameObject:
   m_ObjectHideFlags: 0
@@ -4336,9 +4353,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 117337363}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: CloseBuildingWindow
+      - m_Target: {fileID: 1317446712}
+        m_TargetAssemblyTypeName: BuildingWindowController, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4555,11 +4572,11 @@ RectTransform:
   m_Father: {fileID: 117337367}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 960, y: 540}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -50, y: -50}
+  m_SizeDelta: {x: 750, y: 700}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1862221739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4574,6 +4591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rate: {fileID: 1002972795}
   StarTemplate: {fileID: 2079024576}
+  builder: {fileID: 963194230}
+  uiController: {fileID: 117337363}
 --- !u!1 &1867589301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4586,7 +4605,6 @@ GameObject:
   - component: {fileID: 1867589305}
   - component: {fileID: 1867589304}
   - component: {fileID: 1867589303}
-  - component: {fileID: 1867589306}
   m_Layer: 5
   m_Name: ObjectsList
   m_TagString: Untagged
@@ -4613,7 +4631,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 900, y: 350}
+  m_SizeDelta: {x: 700, y: 500}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1867589303
 MonoBehaviour:
@@ -4658,7 +4676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 0.78431374, a: 0.56078434}
+  m_Color: {r: 1, g: 1, b: 0, a: 0.56078434}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4683,21 +4701,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867589301}
   m_CullTransparentMesh: 1
---- !u!114 &1867589306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867589301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5c95920b7a6cba4a82ea40219464b44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonTemplate: {fileID: 948108097}
-  builder: {fileID: 963194230}
-  uiController: {fileID: 117337363}
 --- !u!1 &1885775406
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,8 +4850,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 117337363}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 1862221739}
+        m_TargetAssemblyTypeName: UpgradeWindowController, Assembly-CSharp
         m_MethodName: Upgrade
         m_Mode: 1
         m_Arguments:
