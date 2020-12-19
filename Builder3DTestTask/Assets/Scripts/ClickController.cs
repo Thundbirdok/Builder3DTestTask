@@ -5,10 +5,16 @@ using UnityEngine;
 public class ClickController : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameObject _UIController = null;
+    private UIController _uiController;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        _uiController = _UIController.GetComponent<UIController>();
+
     }
 
     // Update is called once per frame
@@ -29,12 +35,14 @@ public class ClickController : MonoBehaviour
 
                     Debug.Log("Tile");
 
+                    _uiController.OpenBuildingWindow(hit.transform.gameObject);
+
                 }
 
                 if (hit.transform.gameObject.tag == "Building")
                 {
 
-                    Debug.Log("Building");
+                    _uiController.OpenUpgradeWindow(hit.transform.gameObject);
 
                 }
 
