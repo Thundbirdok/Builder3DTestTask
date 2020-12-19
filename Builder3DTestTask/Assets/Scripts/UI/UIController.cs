@@ -14,8 +14,17 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private GameObject UpgradeWindow = null;
 
+    private UpgradeWindowController upgradeWindowContrtoller = null;
+
     private GameObject target;
     private int selectedObjectToBuild;
+
+    void Start()
+    {
+
+        upgradeWindowContrtoller = UpgradeWindow.GetComponent<UpgradeWindowController>();
+
+    }
 
     public void SelectObjectToBuild(int value)
     {
@@ -55,7 +64,11 @@ public class UIController : MonoBehaviour
 
         target = building;
 
+        int rate = target.GetComponent<Upgradable>().Rate;
+
         UpgradeWindow.SetActive(true);
+
+        upgradeWindowContrtoller.SetRate(rate);        
 
     }
 
@@ -63,6 +76,9 @@ public class UIController : MonoBehaviour
     {
 
         builder.Upgrade(target);
+
+        int rate = target.GetComponent<Upgradable>().Rate;
+        upgradeWindowContrtoller.SetRate(rate);
 
     }
 

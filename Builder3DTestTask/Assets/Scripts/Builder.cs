@@ -25,7 +25,7 @@ public class Builder : MonoBehaviour
     public void Upgrade(GameObject building)
     {
 
-
+        building.GetComponent<Upgradable>().Upgrade();
 
     }
 
