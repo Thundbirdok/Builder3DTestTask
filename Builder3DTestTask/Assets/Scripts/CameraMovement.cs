@@ -35,14 +35,19 @@ public class CameraMovement : MonoBehaviour
         rotationAroundYAxis += Input.GetAxis("Horizontal") * -aroundXSpeed; 
         rotationAroundXAxis += Input.GetAxis("Vertical") * aroundYSpeed;
 
-        rotationAroundXAxis = Mathf.Clamp(rotationAroundXAxis, -85f, 85f);
+        rotationAroundXAxis = Mathf.Clamp(rotationAroundXAxis, -85f, 85f);                
+
+    }
+
+    void LateUpdate()
+    {
 
         transform.position = target;
 
-        transform.localRotation = Quaternion.Euler(rotationAroundXAxis, 
+        transform.localRotation = Quaternion.Euler(rotationAroundXAxis,
             rotationAroundYAxis, 0);
 
-        transform.Translate(new Vector3(0, 0, -distanceToTarget));        
+        transform.Translate(new Vector3(0, 0, -distanceToTarget));
 
     }
 
