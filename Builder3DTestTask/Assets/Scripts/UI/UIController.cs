@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private UpgradeWindowController upgradeWindowContrtoller = null;
 
+    [SerializeField]
+    private NoteWindowController noteWindowContrtoller = null;
+
     private bool isRaycastBlock = false;
 
     private enum OpenedWindow
@@ -21,6 +25,7 @@ public class UIController : MonoBehaviour
 
         BuildingWindow,
         UpgradeWindow,
+        NoteWindow,
         None
 
     }
@@ -65,18 +70,7 @@ public class UIController : MonoBehaviour
 
         }
 
-        if (state == OpenedWindow.UpgradeWindow)
-        {
-
-            upgradeWindowContrtoller.Close();
-
-        }
-        else if (state == OpenedWindow.BuildingWindow)
-        {
-
-            buildingWindowController.Close();
-
-        }
+        CloseWindow();
 
         upgradeWindowContrtoller.Open(building);
 
@@ -84,7 +78,53 @@ public class UIController : MonoBehaviour
 
     }
 
+    internal void OpenNoteWindow(GameObject note)
+    {
+
+        if (isRaycastBlock)
+        {
+
+            return;
+
+        }
+
+        CloseWindow();
+
+        noteWindowContrtoller.Open(note);
+
+        state = OpenedWindow.NoteWindow;
+
+    }
+
     public void CloseWindow()
+    {
+
+        switch (state)
+        {
+
+            case OpenedWindow.UpgradeWindow:
+
+                upgradeWindowContrtoller.Close();
+
+                break;
+
+            case OpenedWindow.BuildingWindow:
+
+                buildingWindowController.Close();
+
+                break;
+
+            case OpenedWindow.NoteWindow:
+
+
+
+                break;
+
+        }
+
+    }
+
+    public void SetWindowClosed()
     {
 
         state = OpenedWindow.None;

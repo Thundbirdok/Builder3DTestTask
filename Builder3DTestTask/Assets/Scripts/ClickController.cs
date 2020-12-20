@@ -21,19 +21,26 @@ public class ClickController : MonoBehaviour
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, 100))
-            {
+            {                
 
-                if (hit.transform.gameObject.tag == "Tile")
+                if (hit.transform.gameObject.CompareTag("Tile"))
                 {
 
                     _uiController.OpenBuildingWindow(hit.transform.gameObject);                    
 
                 }
 
-                if (hit.transform.gameObject.tag == "Building")
+                if (hit.transform.parent.gameObject.CompareTag("Building"))
                 {
 
-                    _uiController.OpenUpgradeWindow(hit.transform.gameObject);
+                    _uiController.OpenUpgradeWindow(hit.transform.parent.gameObject);
+
+                }
+
+                if (hit.transform.parent.gameObject.CompareTag("Note"))
+                {
+
+                    _uiController.OpenNoteWindow(hit.transform.parent.gameObject);
 
                 }
 

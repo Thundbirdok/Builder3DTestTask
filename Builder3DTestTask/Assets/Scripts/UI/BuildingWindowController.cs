@@ -66,7 +66,7 @@ public class BuildingWindowController : MonoBehaviour
 
         uiController.UnblockRaycast();
         gameObject.SetActive(false);
-        uiController.CloseWindow();
+        uiController.SetWindowClosed();
 
     }
 

@@ -87,7 +87,7 @@ public class UpgradeWindowController : MonoBehaviour
     {
 
         gameObject.SetActive(false);
-        uiController.CloseWindow();
+        uiController.SetWindowClosed();
 
     }
 
