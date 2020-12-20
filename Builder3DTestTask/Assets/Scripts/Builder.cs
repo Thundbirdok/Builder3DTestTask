@@ -29,4 +29,16 @@ public class Builder : MonoBehaviour
 
     }
 
+    public void Clear()
+    {
+
+        for (int i = ObjectsPool.childCount - 1; i >= 0; --i)
+        {
+
+            Destroy(ObjectsPool.GetChild(i).gameObject);
+
+        }
+
+    }
+
 }

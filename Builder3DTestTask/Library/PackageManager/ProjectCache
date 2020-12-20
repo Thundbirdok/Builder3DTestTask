@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637440418069034944
+      ticks: 637440685474239854
     m_Hash: 1953513099
   m_LockFileStatus:
     m_FilePath: E:/Projects/Builder3DTestTask/Builder3DTestTask/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637440418319396533
+      ticks: 637440688119575376
     m_Hash: 1554650196
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

@@ -56,17 +56,17 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\NoteWindowController.cs" />
     <Compile Include="Assets\Scripts\UI\UIController.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonObjectToBuild.cs" />
     <Compile Include="Assets\Scripts\Builder.cs" />
     <Compile Include="Assets\Scripts\Upgradable.cs" />
     <Compile Include="Assets\Scripts\Grid\GridGenerator.cs" />
+    <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\UI\UpgradeWindowController.cs" />
     <Compile Include="Assets\Scripts\UI\BuildingWindowController.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\ClickController.cs" />
-    <Compile Include="Assets\Scripts\Note.cs" />
-    <Compile Include="Assets\Scripts\UI\NoteWindowController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
