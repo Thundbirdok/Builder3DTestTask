@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8634760255065334599}
   - component: {fileID: 5496449999524243952}
+  - component: {fileID: -253540119086169108}
   m_Layer: 0
   m_Name: Note03
   m_TagString: Note
@@ -45,6 +46,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteString: Third
+--- !u!114 &-253540119086169108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860056377547001545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2119a2924cd0324d8539b23fa88293d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Index: 0
 --- !u!1 &6940475846738294715
 GameObject:
   m_ObjectHideFlags: 0

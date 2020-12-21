@@ -7,6 +7,10 @@ ScriptsOnlyBuild:
     - CameraMovement
     - ClickController
     - GridGenerator
+    - Note
+    - NoteWindowController
+    - PrefabIndex
+    - SaveManager
     - UIController
     - Upgradable
     - UpgradeWindowController
@@ -66,58 +70,70 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 4380}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 4406}
+      Script: {instanceID: 1578}
     - Class: 114
-      Script: {instanceID: 4466}
+      Script: {instanceID: 1628}
     - Class: 114
-      Script: {instanceID: 4566}
+      Script: {instanceID: 1642}
     - Class: 114
-      Script: {instanceID: 4588}
+      Script: {instanceID: 1742}
     - Class: 114
-      Script: {instanceID: 4686}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 4702}
+      Script: {instanceID: 1864}
     - Class: 114
-      Script: {instanceID: 5024}
+      Script: {instanceID: 1880}
     - Class: 114
-      Script: {instanceID: 5074}
+      Script: {instanceID: 2206}
     - Class: 114
-      Script: {instanceID: 5228}
+      Script: {instanceID: 2256}
     - Class: 114
-      Script: {instanceID: 5410}
+      Script: {instanceID: 2412}
     - Class: 114
-      Script: {instanceID: 5492}
+      Script: {instanceID: 2602}
     - Class: 114
-      Script: {instanceID: 5512}
+      Script: {instanceID: 2684}
     - Class: 114
-      Script: {instanceID: 5534}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 5668}
+      Script: {instanceID: 2726}
     - Class: 114
-      Script: {instanceID: 5692}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 5720}
+      Script: {instanceID: 2888}
     - Class: 114
-      Script: {instanceID: 5868}
+      Script: {instanceID: 2916}
     - Class: 114
-      Script: {instanceID: 5886}
+      Script: {instanceID: 3038}
     - Class: 114
-      Script: {instanceID: 5898}
+      Script: {instanceID: 3068}
     - Class: 114
-      Script: {instanceID: 6200}
+      Script: {instanceID: 3088}
     - Class: 114
-      Script: {instanceID: 6214}
+      Script: {instanceID: 3100}
     - Class: 114
-      Script: {instanceID: 6332}
+      Script: {instanceID: 3402}
     - Class: 114
-      Script: {instanceID: 6384}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 6394}
+      Script: {instanceID: 3534}
     - Class: 114
-      Script: {instanceID: 6468}
+      Script: {instanceID: 3586}
+    - Class: 114
+      Script: {instanceID: 3596}
+    - Class: 114
+      Script: {instanceID: 3670}
+    - Class: 114
+      Script: {instanceID: 16032}
+    - Class: 114
+      Script: {instanceID: 16918}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -158,7 +174,13 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 7dd6fce877792156120de956a1f5055d
+      Hash: 51360935cb14da42fff5cee390ecc070
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NoteWindowController
+  - hash:
+      serializedVersion: 2
+      Hash: d16d86bab19960e833274bce14da5a79
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController
@@ -308,7 +330,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 6f2948e551efd51c166a193c8a7a78f1
+      Hash: 142bba89a628266254091d7dfb822c04
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Builder
@@ -464,6 +486,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 9486007d08ae6175c554a9ed8c2b4fef
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Note
+  - hash:
+      serializedVersion: 2
       Hash: 5cc439bf63c0539d39588e69465ac2ab
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -606,6 +634,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ClickController
+  - hash:
+      serializedVersion: 2
+      Hash: 3ee6ac2370f1519a240078642626ab6c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SaveManager
+  - hash:
+      serializedVersion: 2
+      Hash: 07c76131298427ba48cba994986e3476
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PrefabIndex
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

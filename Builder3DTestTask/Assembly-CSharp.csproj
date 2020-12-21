@@ -59,14 +59,17 @@
     <Compile Include="Assets\Scripts\UI\NoteWindowController.cs" />
     <Compile Include="Assets\Scripts\UI\UIController.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonObjectToBuild.cs" />
+    <Compile Include="Assets\Scripts\SaveManager\SaveData.cs" />
     <Compile Include="Assets\Scripts\Builder.cs" />
     <Compile Include="Assets\Scripts\Upgradable.cs" />
+    <Compile Include="Assets\Scripts\SaveManager\SaveManager.cs" />
     <Compile Include="Assets\Scripts\Grid\GridGenerator.cs" />
     <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\UI\UpgradeWindowController.cs" />
     <Compile Include="Assets\Scripts\UI\BuildingWindowController.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\ClickController.cs" />
+    <Compile Include="Assets\Scripts\SaveManager\SaveSystem.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -86,6 +89,7 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\Saves\save.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />

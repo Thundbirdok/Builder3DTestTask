@@ -6,19 +6,44 @@ public class Builder : MonoBehaviour
 {
 
     [SerializeField]
-    private Transform ObjectsPool;
+    private Transform objectsPool;
 
     [SerializeField]
     private GameObject[] objectsToBuild;
 
+    public Transform ObjectsPool { get => objectsPool; }
     public GameObject[] ObjectsToBuild { get => objectsToBuild; }
 
     public void Build(GameObject place, int index)
     {
-        
-        Instantiate(objectsToBuild[index], 
-            place.transform.position + new Vector3(0, 0.5f, 0), 
+
+        GameObject obj = Instantiate(objectsToBuild[index],
+            place.transform.position + new Vector3(0, 0.5f, 0),
             Quaternion.identity, ObjectsPool);
+
+        SaveData saveData = obj.GetComponent<SaveData>();
+
+        saveData.Index = index;        
+
+    }
+
+    public void Build(Vector3 place, int index, int rate)
+    {
+
+        GameObject obj = Instantiate(objectsToBuild[index],
+            place + new Vector3(0, 0.5f, 0),
+            Quaternion.identity, ObjectsPool);
+
+        SaveData saveData = obj.GetComponent<SaveData>();
+
+        saveData.Index = index;        
+
+        if (rate > 1)
+        {
+
+            obj.GetComponent<Upgradable>().Upgrade(rate);
+
+        }
 
     }
 

@@ -1,0 +1,1 @@
+{"XGridSize":5,"ZGridSize":5,"XCellSize":1,"ZCellSize":1,"X":[2.0,-2.0],"Y":[0.0,0.0],"Z":[2.0,2.0],"Index":[0,0],"Rate":[2,1]}

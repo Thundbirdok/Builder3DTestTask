@@ -29,9 +29,17 @@ public class Upgradable : MonoBehaviour
         {
 
             ++rate;
-            meshRenderer.material.color = RateColors[rate - 1];
+            meshRenderer.material.color = RateColors[rate - 1];            
 
         }
+
+    }
+
+    public void Upgrade(int targetRate)
+    {
+
+        rate = targetRate;
+        meshRenderer.material.color = RateColors[rate];
 
     }
 

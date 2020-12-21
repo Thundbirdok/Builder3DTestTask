@@ -85,4 +85,30 @@ public class GridGenerator : MonoBehaviour
 
     }
 
+    public SaveManager.GridData GetGridData()
+    {
+
+        SaveManager.GridData gridData;
+
+        gridData.XGridSize = xGridSize;
+        gridData.ZGridSize = zGridSize;
+        gridData.XCellSize = xCellSize;
+        gridData.ZCellSize = zCellSize;
+
+        return gridData;
+
+    }
+
+    public void SetGrid(SaveManager.GridData gridData)
+    {
+
+        xGridSize = gridData.XGridSize;
+        zGridSize = gridData.ZGridSize;
+        xCellSize = gridData.XCellSize;
+        zCellSize = gridData.ZCellSize;
+
+        GenerateGrid();
+
+    }
+
 }
